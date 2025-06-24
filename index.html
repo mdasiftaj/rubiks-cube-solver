@@ -3,19 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rubik’s Cube Solver</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Rubik's Cube Solver</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #111;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+    }
+    .tile {
+      width: 30px;
+      height: 30px;
+      margin: 1px;
+      display: inline-block;
+      border: 1px solid #333;
+      transition: transform 0.3s ease;
+    }
+    .cube-face {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin: 5px;
+    }
+    .face-label {
+      text-align: center;
+      margin-top: 5px;
+      color: #aaa;
+    }
+    .face-container {
+      display: inline-block;
+    }
+  </style>
 </head>
-<body>
-  <h1>Rubik’s Cube Solver 🧊</h1>
-  <div id="cube-container"></div>
+<body class="flex flex-col items-center justify-center min-h-screen">
+  <h1 class="text-3xl font-bold text-white mb-8">Rubik's Cube Solver 🏋️</h1>
 
-  <div class="buttons">
-    <button id="scrambleBtn">🔀 Scramble</button>
-    <button id="solveBtn">🧠 Solve</button>
-    <button id="resetBtn">♻️ Reset</button>
+  <div id="cubeDisplay" class="grid grid-cols-4 gap-4">
+    <!-- Faces will be rendered here by cube.js -->
   </div>
 
-  <script type="module" src="main.js"></script>
+  <div class="mt-10 flex gap-4">
+    <button id="scrambleBtn" class="bg-indigo-600 hover:bg-indigo-800 px-6 py-2 rounded-lg text-white font-semibold flex items-center gap-2">
+      ⚙️ Scramble
+    </button>
+    <button id="solveBtn" class="bg-purple-600 hover:bg-purple-800 px-6 py-2 rounded-lg text-white font-semibold flex items-center gap-2">
+      🧠 Solve
+    </button>
+    <button id="resetBtn" class="bg-green-600 hover:bg-green-800 px-6 py-2 rounded-lg text-white font-semibold flex items-center gap-2">
+      ♻️ Reset
+    </button>
+  </div>
+
+  <script src="cube.js"></script>
 </body>
 </html>

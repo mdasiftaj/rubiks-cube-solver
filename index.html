@@ -3,22 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rubik's Cube Solver</title>
+  <title>Rubik’s Cube Solver</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>Rubik’s Cube Solver 🧊</h1>
-    
-    <div id="cube" class="cube-grid"></div>
-    
-    <div class="buttons">
-      <button onclick="scrambleCube()">🔀 Scramble</button>
-      <button onclick="solveCube()">🧠 Solve</button>
-      <button onclick="resetCube()">♻️ Reset</button>
-    </div>
-  </main>
+  <h1>Rubik’s Cube Solver 🧊</h1>
+  <div id="cube-container"></div>
 
-  <script type="module" src="script/main.js"></script>
+  <div class="buttons">
+    <button id="scrambleBtn">🔀 Scramble</button>
+    <button id="solveBtn">🧠 Solve</button>
+    <button id="resetBtn">♻️ Reset</button>
+  </div>
+
+  <script type="module" src="main.js"></script>
 </body>
 </html>

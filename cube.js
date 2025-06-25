@@ -143,3 +143,7 @@ document.getElementById('resetBtn').addEventListener('click', () => {
 document.getElementById('solveBtn').addEventListener('click', () => {
   cube.solve();
 });
+
+
+
+
